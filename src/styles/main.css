@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+    @apply !text-4xl !my-0 font-bold;
+}
+
+h2 {
+    @apply !text-3xl font-bold;
+}
+
+h3 {
+    @apply !text-2xl font-semibold;
+}
+
+h4 {
+    @apply !text-xl font-semibold;
+}
+
+h5 {
+    @apply !text-lg font-semibold;
+}
+
+h6 {
+    @apply !text-base font-semibold;
+}
+
+p,
+a,
+span {
+    @apply text-base;
+}
+
+a[type='button'],
+button {
+    @apply text-base font-semibold;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    height: 10px;
+    z-index: 9999;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #abb1b9;
+    border-radius: 10px;
+    border: 6px solid transparent;
+    background-clip: padding-box;
+    z-index: 9999;
+    transition: all 0.2s ease-in-out !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border: 5px solid transparent;
+    z-index: 9999;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    z-index: 9999;
+}
