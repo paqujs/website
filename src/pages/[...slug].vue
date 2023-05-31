@@ -1,7 +1,7 @@
 <template>
     <Container>
         <ContentDoc>
-            <template #not-found>
+            <template v-slot:not-found>
                 <NotFoundPage />
             </template>
         </ContentDoc>
