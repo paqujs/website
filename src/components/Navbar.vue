@@ -39,7 +39,7 @@
             </Container>
 
             <div
-                class="flex-col justify-center items-center w-full space-y-4 p-4 opacity-0 h-0 hidden"
+                class="flex-col justify-center items-center w-full space-y-4 px-4 opacity-0 h-0 hidden"
                 id="mobile-nav"
             >
                 <NuxtLink
@@ -102,7 +102,7 @@ const openNav = () => {
     gsap.to('#mobile-nav', {
         opacity: 1,
         duration: 0.3,
-        height: `${items.length * 4.5}rem`,
+        height: `${items.length * 4.4}rem`,
         display: 'flex',
         onComplete: () => {
             gsap.fromTo(
