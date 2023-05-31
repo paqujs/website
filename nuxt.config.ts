@@ -40,7 +40,7 @@ export default defineNuxtConfig({
                 },
                 {
                     name: 'og:title',
-                    content: 'SpaceX',
+                    content: 'Paqu.js | The Progressive Discord API Wrapper',
                 },
             ],
             htmlAttrs: {
