@@ -59,4 +59,23 @@ const handleCopy = async () => {
         isCopied.value = false;
     }, 2000);
 };
+
+useHead({
+    title: 'Paqu.js | The Progressive Discord API Wrapper',
+    meta: [
+        {
+            name: 'description',
+            content:
+                'A powerful, easy-to-use library that allows you to interact with the Discord API.',
+        },
+        {
+            name: 'theme-color',
+            content: '#6566e9',
+        },
+        {
+            name: 'og:title',
+            content: 'Paqu.js | The Progressive Discord API Wrapper',
+        },
+    ],
+});
 </script>
