@@ -32,7 +32,12 @@
                         >
                     </p>
                     <p class="text-slate-200 ml-2">npm install paqu.js</p>
-                    <button type="button" class="ml-auto focus:outline-none" @click="handleCopy">
+                    <button
+                        type="button"
+                        class="ml-auto focus:outline-none"
+                        :aria-label="isCopied ? 'Copied' : 'Copy'"
+                        @click="handleCopy"
+                    >
                         <Icon
                             :icon="isCopied ? 'ph:check-bold' : 'ph:copy-duotone'"
                             class="w-6 h-6 text-slate-200"
