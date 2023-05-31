@@ -2,7 +2,7 @@
     <Container>
         <ContentDoc>
             <template #not-found>
-                <p>Failed to load documentation data.</p>
+                <NotFoundPage />
             </template>
         </ContentDoc>
     </Container>
