@@ -1,7 +1,7 @@
 <template>
     <div class="sticky top-0 z-50 backdrop-blur-md">
         <Container
-            class="h-20 z-50 flex items-center md:space-x-[3rem] lg:space-x-[9rem] xl:space-x-[13rem] 2xl:space-x-[22rem] justify-around relative"
+            class="h-20 z-50 flex items-center md:space-x-[3rem] lg:space-x-[9rem] xl:space-x-[13rem] 2xl:space-x-[21rem] justify-around relative"
         >
             <Icon
                 :icon="isOpen ? 'octicon:x-16' : 'material-symbols:menu'"
