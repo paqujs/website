@@ -39,7 +39,7 @@
         </Container>
 
         <div
-            class="flex-col justify-center items-center w-full space-y-4 p-4 opacity-0 hidden"
+            class="flex-col justify-center items-center w-full space-y-4 p-4 opacity-0 h-0 hidden"
             id="mobile-nav"
         >
             <NuxtLink
@@ -94,20 +94,23 @@ const isMobile = ref(false);
 const isOpen = ref(false);
 
 const openNav = () => {
+    isOpen.value = true;
+
     gsap.to('#mobile-nav', {
         opacity: 1,
         duration: 0.3,
+        height: `${items.length * 4.65}rem`,
         display: 'flex',
         onComplete: () => {
             gsap.fromTo(
                 '#mobile-nav > a',
                 {
                     opacity: 0,
-                    y: -20,
+                    x: -20,
                 },
                 {
                     opacity: 1,
-                    y: 0,
+                    x: 0,
                     duration: 0.3,
                     stagger: 0.1,
                 },
@@ -119,26 +122,28 @@ const openNav = () => {
 const closeNav = () => {
     gsap.to('#mobile-nav > a', {
         opacity: 0,
-        y: -20,
+        x: -20,
         duration: 0.3,
         stagger: -0.1,
         onComplete: () => {
             gsap.to('#mobile-nav', {
                 opacity: 0,
                 duration: 0.3,
+                height: 0,
                 display: 'none',
+                onComplete: () => {
+                    isOpen.value = false;
+                },
             });
         },
     });
 };
 
 const handleNav = () => {
-    isOpen.value = !isOpen.value;
-
     if (isOpen.value) {
-        openNav();
-    } else {
         closeNav();
+    } else {
+        openNav();
     }
 };
 
@@ -147,7 +152,6 @@ const handleResize = () => {
 
     if (!isMobile.value && isOpen.value) {
         closeNav();
-        isOpen.value = false;
     }
 };
 
