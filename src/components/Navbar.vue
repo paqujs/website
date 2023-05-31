@@ -92,6 +92,7 @@ const contacts = [
 
 const isMobile = ref(false);
 const isOpen = ref(false);
+const routerLinkActiveColor = computed(() => (isMobile.value ? 'rgba(0,0,0,0.2)' : '#121212'));
 
 const openNav = () => {
     isOpen.value = true;
@@ -164,3 +165,10 @@ onUnmounted(() => {
     window.removeEventListener('resize', handleResize);
 });
 </script>
+
+<style scoped>
+.router-link-active {
+    background-color: v-bind('routerLinkActiveColor');
+    color: white;
+}
+</style>
