@@ -90,9 +90,11 @@ const contacts = [
     },
 ];
 
+const router = useRouter();
+
 const isMobile = ref(false);
 const isOpen = ref(false);
-const routerLinkActiveColor = computed(() => (isMobile.value ? 'rgba(0,0,0,0.2)' : '#121212'));
+const routerLinkActiveBGColor = computed(() => (isMobile.value ? 'rgba(0,0,0,0.2)' : '#121212'));
 
 const openNav = () => {
     isOpen.value = true;
@@ -121,22 +123,25 @@ const openNav = () => {
 };
 
 const closeNav = () => {
-    gsap.to('#mobile-nav > a', {
-        opacity: 0,
-        x: -20,
-        duration: 0.3,
-        stagger: -0.1,
-        onComplete: () => {
-            gsap.to('#mobile-nav', {
-                opacity: 0,
-                duration: 0.3,
-                height: 0,
-                display: 'none',
-                onComplete: () => {
-                    isOpen.value = false;
-                },
-            });
-        },
+    return new Promise<void>((resolve) => {
+        gsap.to('#mobile-nav > a', {
+            opacity: 0,
+            x: -20,
+            duration: 0.3,
+            stagger: -0.1,
+            onComplete: () => {
+                gsap.to('#mobile-nav', {
+                    opacity: 0,
+                    duration: 0.3,
+                    height: 0,
+                    display: 'none',
+                    onComplete: () => {
+                        isOpen.value = false;
+                        resolve();
+                    },
+                });
+            },
+        });
     });
 };
 
@@ -156,6 +161,14 @@ const handleResize = () => {
     }
 };
 
+router.beforeEach(async (_, __, next) => {
+    if (isOpen.value) {
+        await closeNav();
+    }
+
+    next();
+});
+
 onMounted(() => {
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -168,7 +181,7 @@ onUnmounted(() => {
 
 <style scoped>
 .router-link-active {
-    background-color: v-bind('routerLinkActiveColor');
+    background-color: v-bind('routerLinkActiveBGColor');
     color: white;
 }
 </style>

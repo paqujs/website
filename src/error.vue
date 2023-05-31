@@ -1,6 +1,6 @@
 <template>
-    <div class="background-gradient">
-        <BasePage class="w-full h-full text-white absolute overflow-x-hidden font-[Inter]">
+    <div class="bg-gradient fixed w-full h-full -z-[1]">
+        <BasePage>
             <Container>
                 <div class="mt-24 md:mt-44 flex flex-col items-center justify-center text-center">
                     <h1 class="!text-8xl">{{ error.statusCode }}</h1>
@@ -50,11 +50,7 @@ useHead({
 </script>
 
 <style scoped>
-.background-gradient {
-    background: radial-gradient(circle at 50% 100%, #6566e9, rgba(255, 255, 255, 0) 75%), #0c0c0c;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+.bg-gradient {
+    background: radial-gradient(circle at 50% 100%, #6566e9, rgba(255, 255, 255, 0) 75%), #000;
 }
 </style>
