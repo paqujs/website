@@ -1,6 +1,9 @@
 <template>
     <BasePage>
         <Navbar />
-        <slot />
+
+        <div class="mt-[80px]">
+            <slot />
+        </div>
     </BasePage>
 </template>
