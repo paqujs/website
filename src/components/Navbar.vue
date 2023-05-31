@@ -17,7 +17,7 @@
                     v-for="(item, i) in items"
                     :to="item.to"
                     :key="i"
-                    class="text-slate-200 flex items-center gap-1 text-lg px-4 py-1.5 rounded-md hover:bg-[#121212] hover:text-white transition-colors"
+                    class="text-slate-200 flex items-center gap-1 px-4 py-1.5 rounded-md hover:bg-[#121212] hover:text-white transition-colors"
                 >
                     <Icon :icon="item.icon" class="h-5 w-5" />
                     {{ upperFirst(item.name) }}
@@ -46,7 +46,7 @@
                 v-for="(item, i) in items"
                 :to="item.to"
                 :key="i"
-                class="text-slate-200 flex items-center gap-1 w-full text-lg py-3 px-4 rounded-md hover:bg-[rgba(0,0,0,0.2)] hover:text-white transition-colors opacity-0"
+                class="text-slate-200 flex items-center gap-1 w-full py-3 px-4 rounded-md hover:bg-[rgba(0,0,0,0.2)] hover:text-white transition-colors opacity-0"
             >
                 <Icon :icon="item.icon" class="h-6 w-6" />
                 {{ upperFirst(item.name) }}
